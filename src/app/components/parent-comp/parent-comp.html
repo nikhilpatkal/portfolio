@@ -1,0 +1,33 @@
+
+<div style="display: flex;padding: 0px;margin: 0px;width: 100%;height: 100vh;" #vantaRef class="vanta-bg">
+  <div style="flex: 1;">
+    <app-section1 (navigate)="scrollToSection($event)"></app-section1>
+  </div>
+  <div style="flex: 1;">
+    <app-section2 #Section2></app-section2>
+  </div>
+</div>
+
+<style>
+@media (max-width: 768px) {
+  .vanta-bg {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .vanta-bg > div {
+    flex: none;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .vanta-bg > div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+}
+</style>

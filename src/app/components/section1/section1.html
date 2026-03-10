@@ -1,0 +1,85 @@
+<div style="padding: 25px;background-color: rgb(33, 60, 94);padding-left: 180px;padding-top: 60px;">
+  <p class="f1" style="font-weight: bold;font-size: 48px;color: rgb(226, 232, 240);font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';padding: 0px;margin: 0px;">
+    Nikhil Patkal
+</p>
+  <p class="font f1" style="font-size: 20px;font-weight: bold;">
+    Full Stack Developer
+  </p>
+  <p class="font f1"style='width:60%;'>I enjoy solving real-world problems through software, security improvements, and clean architecture.
+  </p>
+  <div style="margin-top: 60px;margin-bottom: 70px;" class="nav-menu">
+    <ul>
+      <li class="nav-item font" [class.active]="activeSection === 'about'" (click)="setActive('about')">
+        <span class="indicator"></span>
+        ABOUT
+      </li>
+
+      <li class="nav-item font" [class.active]="activeSection === 'experience'"(click)="setActive('experience')">
+        <span class="indicator"></span>
+        EXPERIENCE
+      </li>
+
+      <li class="nav-item font" [class.active]="activeSection === 'projects'"(click)="setActive('projects')">
+        <span class="indicator"></span>
+        PROJECTS
+      </li>
+
+      <li class="nav-item font" [class.active]="activeSection === 'skills'"(click)="setActive('skills')">
+        <span class="indicator"></span>
+        SKILLS
+      </li>
+
+      <li class="nav-item font" [class.active]="activeSection === 'education'"(click)="setActive('education')">
+        <span class="indicator"></span>
+        EDUCATION
+      </li>
+
+      <li class="nav-item font" [class.active]="activeSection === 'contact'"(click)="setActive('contact')">
+        <span class="indicator"></span>
+        CONTACT
+      </li>
+    </ul>
+  </div>
+  <div class='f1'>
+    <a href="https://www.linkedin.com/in/nikhil-patkal/" target="_blank" style="margin-right: 20px;">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://github.com/your-github-username" target="_blank" style="margin-right: 20px;">
+      <img src="https://github.githubassets.com/images/modules/site/icons/footer/github-mark.svg" alt="GitHub" style="width: 24px; height: 24px;">
+    </a>
+    <a href="https://instagram.com/your-instagram-username" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px;">
+    </a>
+  </div >
+</div>
+<style>
+@media (max-width: 768px) {
+  div {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    text-align: center;
+  }
+
+  p[style*='width:60%'] {
+    width: 100% !important;
+  }
+
+  .nav-item {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  div {
+    padding: 20px !important;
+  }
+
+  p[style*='font-size: 48px'] {
+    font-size: 36px !important;
+  }
+
+  p[style*='font-size: 20px'] {
+    font-size: 16px !important;
+  }
+}
+</style>

@@ -1,0 +1,211 @@
+<div style="background-color: rgb(33, 60, 94);align-content: flex-end;padding-top: 60px;" class="content-container"
+  #contentContainer>
+ <div id="about" style="width: 80%; padding-top: 30px;">
+  <p class="mb-4">
+    I’m a Full Stack Developer who enjoys building modern web applications and solving real-world problems through technology. I work across both frontend and backend development, focusing on creating applications that are fast, reliable, and easy for users to interact with.
+  </p>
+
+  <p class="mb-4">
+    On the frontend side, I work with technologies like Angular, HTML, CSS, and JavaScript to build responsive and intuitive user interfaces. I enjoy transforming ideas into clean and simple designs that provide a smooth user experience.
+  </p>
+
+  <p class="mb-4">
+    On the backend, I work with APIs, databases, and server-side logic to ensure applications run efficiently and securely. I focus on writing clean and maintainable code while building systems that can scale as products grow.
+  </p>
+
+  <p class="mb-4">
+    In my professional work, I collaborate with teams to develop new features, resolve issues, and improve existing systems. I enjoy debugging complex problems, optimizing performance, and continuously improving the quality of the applications I work on.
+  </p>
+
+  <p>
+    Outside of work, I spend time learning new technologies, exploring modern development tools, and building personal projects to improve my skills and stay up to date with the evolving world of web development.
+  </p>
+</div>
+  <div id="experience" style="margin-top: 100px;">
+    <div class="experience-wrapper">
+
+  @for (job of experience; track job.company) {
+
+    <div class="experience-card">
+
+      <div class="experience-grid">
+
+        <div class="experience-date">
+          {{ job.startDate }} — {{ job.endDate }}
+        </div>
+
+        <div class="experience-content">
+
+          <!-- <h3 class="experience-title">
+            {{ job.role }} · {{ job.company }}
+          </h3> -->
+            <h3 class="experience-title">
+
+            {{ job.role }} ·
+
+            <a
+              [href]="job.companyLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="company-link"
+            >
+              {{ job.company }} ↗
+            </a>
+
+          </h3>
+
+          <p class="experience-description">
+            {{ job.description }}
+          </p>
+
+          <div class="skills">
+
+            @for (skill of job.skills; track skill) {
+              <span class="skill-tag">
+                {{ skill }}
+              </span>
+            }
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  }
+
+</div>
+  </div>
+  <div id="projects" style="margin-top: 100px;">
+    <div class="projects-wrapper">
+
+  @for (project of projects; track project.title) {
+
+    <div class="project-card">
+
+      <h3 class="project-title">
+        {{ project.title }}
+      </h3>
+
+      <p class="project-type">
+        {{ project.type }}
+      </p>
+
+      <p class="project-description">
+        {{ project.description }}
+      </p>
+
+      <ul class="project-features">
+        @for (feature of project.features; track feature) {
+          <li>{{ feature }}</li>
+        }
+      </ul>
+
+      <div class="tech-stack">
+        @for (tech of project.technologies; track tech) {
+          <span class="tech-tag">{{ tech }}</span>
+        }
+      </div>
+
+    </div>
+
+  }
+
+</div>
+  </div>
+
+  <div id="skills" style="margin-top: 100px;padding-top: 60px;">
+    <h2 class="section-title">Skills & Technologies</h2>
+    <div class="skills-wrapper">
+      @for (skillGroup of skills; track skillGroup.category) {
+        <div class="skill-group">
+          <h3 class="skill-category">{{ skillGroup.category }}</h3>
+          <div class="skill-items">
+            @for (tech of skillGroup.technologies; track tech) {
+              <span class="skill-badge">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div id="education" style="margin-top: 100px;padding-top: 60px;">
+    <h2 class="section-title">Education</h2>
+    <div class="education-wrapper">
+      @for (edu of education; track edu.degree || edu.title) {
+        <div class="education-card">
+          @if (edu.degree) {
+            <h3 class="education-degree">{{ edu.degree }}</h3>
+            <p class="education-field">{{ edu.field }}</p>
+            <p class="education-institution">{{ edu.institution }}</p>
+            <p class="education-year">{{ edu.graduationYear }}</p>
+            <p class="education-description">{{ edu.description }}</p>
+          } @else {
+            <h3 class="education-degree">{{ edu.title }}</h3>
+            <p class="education-description">{{ edu.description }}</p>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+  <div id="contact" style="margin-top: 100px;padding-top: 60px;padding-bottom: 100px;">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-wrapper">
+      <div class="contact-card">
+        <h3 class="contact-title">Email</h3>
+        <a href="mailto:nikhil.patkal@example.com" class="contact-link">nikhilpatkal9552@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <h3 class="contact-title">Download Resume</h3>
+        <a 
+  href="https://drive.google.com/file/d/1A4QFzEgk6CKgxDjx9EQ00gmIFC22ce2h/view?usp=drive_link"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="contact-link download-btn"
+>
+  📄 View CV
+</a>
+      </div>
+      <!-- <div class="contact-card">
+        <h3 class="contact-title">Connect</h3>
+        <div class="contact-social">
+          <a href="https://www.linkedin.com/in/nikhil-patkal/" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a>
+          <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" class="contact-link">GitHub</a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<style>
+@media (max-width: 768px) {
+  #about {
+    width: 100% !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  #experience,
+  #projects {
+    margin-top: 60px !important;
+    padding-top: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  #experience,
+  #projects {
+    margin-top: 40px !important;
+    padding-top: 20px !important;
+  }
+}
+</style>
