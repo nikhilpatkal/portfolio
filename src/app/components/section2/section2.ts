@@ -9,24 +9,24 @@ import { Scroll } from '../../services/scroll';
   styleUrl: './section2.scss',
 })
 export class Section2 {
-experience = EXPERIENCE;
-projects = PROJECTS;
-skills = SKILLS;
-education = EDUCATION;
-scrollService=inject(Scroll);
+  experience = EXPERIENCE;
+  projects = PROJECTS;
+  skills = SKILLS;
+  education = EDUCATION;
+  scrollService = inject(Scroll);
   @ViewChild('contentContainer') container!: ElementRef;
 
-scrollTo(section: string) {
+  scrollTo(section: string) {
 
-  const element = this.container.nativeElement.querySelector('#' + section);
+    const element = this.container.nativeElement.querySelector('#' + section);
 
-  if (element) {
-    element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    });
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   }
-}
 
 
 }
@@ -143,6 +143,7 @@ export const SKILLS = [
   {
     category: "Backend",
     technologies: [
+      "Core Java",
       ".NET Core",
       "C#",
       "ASP.NET Web API",
@@ -152,17 +153,7 @@ export const SKILLS = [
   },
   {
     category: "Cloud & DevOps",
-    technologies: [
-      "Microsoft Azure",
-      "Azure App Service",
-      "Azure Virtual Machines",
-      "Azure SQL Database",
-      "Azure API Management",
-      "Azure Blob Storage",
-      "Git",
-      "GitHub",
-      "CI/CD"
-    ]
+    technologies: ["AWS EC2", "AWS S3", "AWS RDS", "AWS Lambda", "AWS API Gateway", "AWS CloudFront", "AWS IAM", "AWS VPC", "Microsoft Azure", "Azure App Service", "Azure Virtual Machines", "Azure SQL Database", "Azure API Management", "Azure Blob Storage", "Git", "GitHub", "CI/CD"]
   },
   {
     category: "Tools & Platforms",
@@ -194,7 +185,6 @@ export const EDUCATION = [
   },
   {
     title: "Professional Learning",
-    description:
-      "Continuously improving skills in Angular, .NET, APIs, cloud technologies, and scalable web application development through real-world projects and self-learning."
+    description: "Continuously enhancing skills in Angular, .NET, APIs, cloud technologies, and scalable web application development through real-world projects. Actively learning AWS and preparing for the AWS Certified Cloud Practitioner certification, gaining hands-on experience with core cloud services."
   }
 ];

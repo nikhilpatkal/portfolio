@@ -1,97 +1,61 @@
-.font{
-  color: rgb(226, 232, 240);font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-.nav-list {
-  list-style: none;
-  padding: 0;
-}
-
-.nav-item {
+.layout-container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 96px; // 6rem
   display: flex;
-  align-items: center;
-  gap: 15px;
-  color: #8892b0;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin: 20px 0;
-  cursor: pointer;
+  justify-content: space-between;
+  gap: 48px;
+  background-color: var(--bg-color);
 }
 
-.indicator {
-  height: 2px;
-  width: 40px;
-  background: #8892b0;
-  transition: width 0.3s ease, background 0.2s ease;
+.sidebar-wrapper {
+  // Classic Sticky Side Layout
+  flex: 0 0 45%;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* hover effect */
-.nav-item:hover .indicator {
-  width: 70px;
-  background: #ccd6f6;
+.content-wrapper {
+  flex: 1;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
-.nav-item:hover {
-  color: #f2f3f4;
+/* Tablets / Typical Desktop Shrinko */
+@media (max-width: 1024px) {
+  .layout-container {
+    padding: 0 48px;
+    flex-direction: column;
+  }
+  
+  .sidebar-wrapper {
+    position: relative;
+    max-height: none;
+    width: 100%;
+    padding-bottom: 0px;
+  }
+
+  .content-wrapper {
+    width: 100%;
+    padding-top: 48px;
+  }
 }
 
-/* active item */
-.nav-item.active .indicator {
-  width: 70px;
-  background: #eef1f0;
-}
-
-.nav-item.active {
-  color: #e6ecea;
-}
-
-.li{
-  font-size: .75rem;
-}
-// .vanta-bg {
-//   position: fixed;
-//   inset: 0;
-//   z-index: -1;
-//   opacity: 0.95;
-// }
-::ng-deep .vanta-canvas {
-  opacity: 1 !important;
-  filter: contrast(120%); /* This can make the black lines look much sharper */
-}
-
-/* Responsive Design */
+/* Mobile Devices */
 @media (max-width: 768px) {
-  .nav-item {
-    font-size: 14px;
-    margin: 15px 0;
+  .layout-container {
+    padding: 0 24px;
   }
-
-  .indicator {
-    width: 30px;
+  .sidebar-wrapper {
+    padding-top: 48px;
   }
-
-  .nav-item:hover .indicator,
-  .nav-item.active .indicator {
-    width: 50px;
+  .content-wrapper {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 }
-
-@media (max-width: 480px) {
-  .nav-item {
-    font-size: 12px;
-    margin: 12px 0;
-    gap: 10px;
-  }
-
-  .indicator {
-    width: 25px;
-  }
-
-  .nav-item:hover .indicator,
-  .nav-item.active .indicator {
-    width: 40px;
-  }
-}
-
-
-
